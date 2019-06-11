@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+.nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  max-width: 80rem;
+  background: #313131;
+  height: 4.4rem;
+}
+.nav a{
+  font-size: 1.4rem;
+  color: white;
+  padding: 1rem;
+  font-weight: 300;
+}
+.nav a:link{
+  list-style: none;
+  text-decoration: none;
+}
