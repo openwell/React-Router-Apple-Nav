@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import "./App.css";
-import Tab from "./components/Tab";
+import Tab from "./components/Tabs";
 import uuid from "uuid/v1";
 
 class App extends Component {
@@ -9,8 +9,7 @@ class App extends Component {
     const routers = [
       {
         name: "Home",
-        link: "/",
-        component: ''
+        link: "/"
       },
       {
         name: "Mac",
@@ -45,19 +44,34 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-        <ul className='nav'>
-            {routers.map(elem => {
-              return (
-                <Link key={uuid()} to={elem.link}>
-                  {elem.name}
-                </Link>
-              );
-            })}
-          </ul>
-          <Switch>
-            <Route path="/" exact component={Tab} />
-          </Switch>
-          
+          <Route
+            render={({ location }) => (
+              <div>
+                <ul className="nav">
+                  {routers.map(elem => {
+                    return (
+                      <Link key={uuid()} to={elem.link}>
+                        {elem.name}
+                      </Link>
+                    );
+                  })}
+                </ul>
+
+                <Switch location={location}>
+                  {routers.map(elem => {
+                    return (
+                      <Route
+                        key={uuid()}
+                        path={elem.link}
+                        exact
+                        component={Tab}
+                      />
+                    );
+                  })}
+                </Switch>
+              </div>
+            )}
+          />
         </Router>
       </div>
     );

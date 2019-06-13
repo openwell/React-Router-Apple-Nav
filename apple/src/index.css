@@ -138,7 +138,7 @@ html {
 html,
 body {
   font-family: Roboto, sans-serif;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
 }
@@ -189,4 +189,46 @@ img {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+/* .fade-appear {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 250ms linear;
+} */
+
+.fade-appear {
+  opacity: 0;
+  transform: scale(0.5) translateX(400px);
+  z-index: 1;
+}
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  transition: opacity 3000ms linear 1000ms, transform 3000ms ease-in-out 1000ms;
+}
+
+
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms linear 250ms;
+}
+
+/* exit */
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 250ms linear;
+}
+.fade-exit-done {
+  opacity: 0;
 }
