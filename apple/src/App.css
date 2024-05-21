@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+.nav{
+  display: flex;
+  justify-content: space-between;
+  max-width: 100rem;
+  background: #313131;
+  height: 4.4rem;
+  margin: 0 auto;
+}
+.nav a{
+  font-size: 1.4rem;
+  color: white;
+  padding: 1rem;
+  font-weight: 300;
+}
+.nav a:link{
+  list-style: none;
+  text-decoration: none;
+}
+.navImage{
+  width: 30px;
+  height: 54px;
+}
+.navImageWrapper{
+  display: flex;
+  justify-content: space-between;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+
